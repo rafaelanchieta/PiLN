@@ -7,7 +7,7 @@ from pandas import DataFrame
 
 def read_corpus() -> Tuple[DataFrame, DataFrame]:
     ironia = pd.read_csv('data/ironia.csv', sep=';')
-    nao_ironico = pd.read_csv('../data/nao-ironico.csv', sep=';')
+    nao_ironico = pd.read_csv('data/nao-ironico.csv', sep=';')
     return ironia, nao_ironico
 
 
