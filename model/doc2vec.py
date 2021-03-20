@@ -16,11 +16,12 @@ def train_and_save():
     model.build_vocab(documents)
     model.train(documents, total_examples=model.corpus_count, epochs=model.epochs)
     model.save('saved_models/doc2vec.model')
-    
+    #model.save_word2vec_format('saved_models/doc2vec.bin', binary=True)
     print(model.wv.most_similar('ironia'))
     
 def get_d2v_model(filepath):
     model = Doc2Vec.load(filepath)
+    #model = Doc2Vec.load_word2vec_format('saved_models/doc2vec.bin', binary=True)
     return model
 
 def get_embedding_model(filepath):
@@ -55,29 +56,31 @@ def run_classifier(classifier, X_train, X_test, y_train, y_test):
     
     classifier.fit(X_train,y_train)
     
-    score = classifier.score(X_test,y_test)
-    
     pred = classifier.predict(X_test)
     
-    acc_scores = accuracy_score(y_test,pred)
-    ballanced_acc_scores = balanced_accuracy_score(y_test, pred)
+    acc_score = accuracy_score(y_test,pred)
+    ballanced_acc_score = balanced_accuracy_score(y_test, pred)
     
-    return acc_scores, ballanced_acc_scores
+    return acc_score, ballanced_acc_score
   
 
-X, y = util.read_corpus()     
-'''
+#train_and_save()
+
+X, y = util.read_corpus()  
 #get_d2v_model('saved_models/doc2vec.model')
 X = generate_d2v_vectors_from_all_data(get_d2v_model('saved_models/doc2vec.model'), X)
 X_train, X_test, y_train, y_test = util.split_data_set(X,y)
+
 '''
+X, y = util.read_corpus()  
 X_train, X_test, y_train, y_test = generate_d2v_vectors_from_splitted_data(get_d2v_model('saved_models/doc2vec.model'), X,y)
 #X_train, X_test, y_train, y_test = generate_d2v_vectors_from_splitted_data(get_embedding_model('saved_models/skip_s100.txt'), X,y)
-
+'''
 classifier = LinearSVC()
 
 acc_score, ballanced_acc_scores = run_classifier(classifier, X_train, X_test, y_train, y_test)
 
 print(acc_score)
 print(ballanced_acc_scores)
+
 
