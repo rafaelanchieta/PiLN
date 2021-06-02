@@ -1,4 +1,3 @@
-
 from gensim.models import Doc2Vec
 from nltk import NaiveBayesClassifier
 
