@@ -7,3 +7,6 @@ Irony Detection in Portuguese
 - [ ] Redes recorrentes
 - [ ] BERT
 - [ ] Data Augumentation
+
+## Recursos
+- [] Modelos de embbeddings e classificadores https://bityli.com/VQFGa
