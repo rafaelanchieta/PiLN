@@ -9,4 +9,4 @@ Irony Detection in Portuguese
 - [ ] Data Augumentation
 
 ## Recursos
-- [] Modelos de embbeddings e classificadores https://bityli.com/VQFGa
+- Modelos de embbeddings e classificadores https://bityli.com/VQFGa
