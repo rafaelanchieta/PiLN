@@ -1,9 +1,10 @@
+import os
 import pickle
 
 
 class ClassificadorNews:
     def __init__(self):
-        with open('models/ModeloTweetsTF-IDF.pickle', 'rb') as file_pickle:
+        with open(os.getcwd() + '/trained-models/ModeloTweetsTF-IDF.pickle', 'rb') as file_pickle:
             self.clf = pickle.loads(file_pickle.read())
             file_pickle.close()
     
