@@ -25,7 +25,18 @@ This repository contains the trained models for the Irony Detection task in Port
 `python irony_detection -m superficial -c twitter -t <sentence>`
 
 ## Reference
-
+```
+@inproceedings{anchieta-et-al-21,
+    author = "Anchi{\^e}ta, Rafael and Neto, Assis and Marinho, Jeziel and Moura, Raimundo"
+    title = "{P}i{LN} {IDPT} 2021: {I}rony {D}etection in {P}ortuguese {T}exts with {S}uperficial {F}eatures and {E}mbeddings"
+    booktitle = "Proceedings of the Iberian Languages Evaluation Forum (IberLEF 2021)
+co-located with the Conference of the Spanish Society for Natural Language Processing (SEPLN 2021)",
+    month = sep,
+    year = "2021",
+    address = "Málaga, Spain",
+    pages = "917--924",
+}
+```
 
 
 
